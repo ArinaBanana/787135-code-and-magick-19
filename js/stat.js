@@ -1,3 +1,5 @@
+'use strict';
+
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -65,7 +67,7 @@ var renderPlayerChart = function (ctx, name, time, height, x, color) {
 
   renderText(ctx, Math.round(time), x, currentGistY - MARGIN, '#000000');
   renderGist(ctx, x, currentGistY, height, color);
-  renderText(ctx, name, x,currentGistY + height + LINE_HEIGHT, '#000000');
+  renderText(ctx, name, x, currentGistY + height + LINE_HEIGHT, '#000000');
 };
 
 window.renderStatistics = function (ctx, names, times) {
