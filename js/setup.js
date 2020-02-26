@@ -5,7 +5,7 @@ var SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Валь
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 
-var characters = document.querySelector('.setup');
+var settingCharacters = document.querySelector('.setup');
 var similarCharacters = document.querySelector('.setup-similar');
 var similarList = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
@@ -83,5 +83,45 @@ var renderWizards = function (wizardList) {
 var wizards = getRandomWizards();
 renderWizards(wizards);
 
-characters.classList.remove('hidden');
 similarCharacters.classList.remove('hidden');
+
+// module4-task1
+var ESC_KEY = 'Escape';
+var ENTER_KEY = 'Enter';
+
+var openSettingCharacters = document.querySelector('.setup-open');
+var closeSettingCharacters = document.querySelector('.setup-close');
+
+var pressEscapeHandler = function (evt) {
+  if (evt.key === ESC_KEY) {
+    closePopup();
+  }
+};
+var openPopup = function () {
+  settingCharacters.classList.remove('hidden');
+  document.addEventListener('keydown', pressEscapeHandler);
+};
+var closePopup = function () {
+  settingCharacters.classList.add('hidden');
+  document.removeEventListener('keydown', pressEscapeHandler);
+};
+
+openSettingCharacters.addEventListener('click', function () {
+  openPopup();
+});
+
+openSettingCharacters.addEventListener('keydown', function (evt) {
+  if (evt.key === ENTER_KEY) {
+    openPopup();
+  }
+});
+
+closeSettingCharacters.addEventListener('click', function () {
+  closePopup();
+});
+
+closeSettingCharacters.addEventListener('keydown', function (evt) {
+  if (evt.key === ENTER_KEY) {
+    closePopup();
+  }
+});
