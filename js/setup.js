@@ -99,6 +99,16 @@ var ENTER_KEY = 'Enter';
 var openSettingCharacters = document.querySelector('.setup-open');
 var closeSettingCharacters = document.querySelector('.setup-close');
 
+var coatCharacters = document.querySelector('.wizard-coat');
+var eyesCharacters = document.querySelector('.wizard-eyes');
+var fireballCharacters = document.querySelector('.setup-fireball-wrap');
+
+var inputCoat = document.querySelector('input[name=coat-color]');
+var inputEyes = document.querySelector('input[name=eyes-color]');
+var inputFireball = document.querySelector('input[name=fireball-color]');
+
+// открытие и закрытие окна настройки
+
 var pressEscapeHandler = function (evt) {
   if (evt.key === ESC_KEY) {
     closePopup();
@@ -132,3 +142,27 @@ closeSettingCharacters.addEventListener('keydown', function (evt) {
     closePopup();
   }
 });
+
+// взаимодействие с настройками персонажа
+
+coatCharacters.addEventListener('click', function () {
+  var color = getRandomColor(COAT_COLORS);
+
+  coatCharacters.setAttribute('style', 'fill:' + color);
+  inputCoat.setAttribute('value', color);
+});
+
+eyesCharacters.addEventListener('click', function () {
+  var color = getRandomColor(EYES_COLORS);
+
+  eyesCharacters.setAttribute('style', 'fill:' + getRandomColor(EYES_COLORS));
+  inputEyes.setAttribute('value', color);
+});
+
+fireballCharacters.addEventListener('click', function () {
+  var color = getRandomColor(FIREBALL_COlORS);
+
+  fireballCharacters.setAttribute('style', 'background-color:' + getRandomColor(FIREBALL_COlORS));
+  inputFireball.setAttribute('value', color);
+});
+
