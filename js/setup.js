@@ -22,18 +22,6 @@ var getRandomName = function (names, surnames) {
   return names[nameIndex] + ' ' + surnames[surnameIndex];
 };
 
-// var getRandomCoatColor = function (coats) {
-//   var coatIndex = getRandomNumber(0, coats.length);
-//
-//   return coats[coatIndex];
-// };
-//
-// var getRandomEyesColor = function (eyes) {
-//   var eyesIndex = getRandomNumber(0, eyes.length);
-//
-//   return eyes[eyesIndex];
-// };
-
 var getRandomColor = function (arrayColor) {
   var arrIndex = getRandomNumber(0, arrayColor.length);
 
