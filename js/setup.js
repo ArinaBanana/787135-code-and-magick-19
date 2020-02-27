@@ -21,23 +21,29 @@ var getRandomName = function (names, surnames) {
   return names[nameIndex] + ' ' + surnames[surnameIndex];
 };
 
-var getRandomCoatColor = function (coats) {
-  var coatIndex = getRandomNumber(0, coats.length);
+// var getRandomCoatColor = function (coats) {
+//   var coatIndex = getRandomNumber(0, coats.length);
+//
+//   return coats[coatIndex];
+// };
+//
+// var getRandomEyesColor = function (eyes) {
+//   var eyesIndex = getRandomNumber(0, eyes.length);
+//
+//   return eyes[eyesIndex];
+// };
 
-  return coats[coatIndex];
-};
+var getRandomColor = function (arrayColor) {
+  var arrIndex = getRandomNumber(0, arrayColor.length);
 
-var getRandomEyesColor = function (eyes) {
-  var eyesIndex = getRandomNumber(0, eyes.length);
-
-  return eyes[eyesIndex];
+  return arrayColor[arrIndex];
 };
 
 var getWizard = function () {
   var wizard = {
     name: getRandomName(NAMES, SURNAMES),
-    coatColor: getRandomCoatColor(COAT_COLORS),
-    eyesColor: getRandomEyesColor(EYES_COLORS),
+    coatColor: getRandomColor(COAT_COLORS),
+    eyesColor: getRandomColor(EYES_COLORS)
   };
 
   return wizard;
